@@ -9,10 +9,43 @@
     <link rel="stylesheet" href="build/css/bootstrap.css">
     <link rel="stylesheet" href="build/css/style.css">
   </head>
-
   <body>
     <div class="container">
-      <div id="navbar"></div>
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Bootstrap 4 Boilerplate</a>
+        <button class="navbar-toggler"
+          type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" id="home-nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"
+                href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Option 1</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Option 2</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Option 3</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <div class="jumbotron mt-5">
         <h1 class="text-center">Bootstrap 4 Boilerplate Project</h1>
         <p class="lead text-center">The quickest way to get started with a website.</p>
@@ -24,12 +57,5 @@
     <script src="build/js/popper.min.js"></script>
     <script src="build/js/bootstrap.min.js"></script>
     <script src="build/js/script.js"></script>
-    <script>
-      $(document).ready(function(){
-        $("#navbar").load("navbar.html", function() {
-          document.getElementById('home-nav-item').className = 'nav-item active';
-        });
-      });
-    </script>
   </body>
 </html>
