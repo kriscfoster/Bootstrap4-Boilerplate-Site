@@ -21,7 +21,7 @@ gulp.task('js', function() {
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', gulp.series('sass', function() {
+gulp.task('serve', gulp.series('js', 'sass', function() {
 	browserSync.init({
 		server: "./",
 		open: false
@@ -31,8 +31,9 @@ gulp.task('serve', gulp.series('sass', function() {
 		'src/scss/*.scss'], gulp.series('sass'));
 	gulp.watch(['node_modules/bootstrap/dist/js/bootstrap.min.js',
 		'node_modules/jquery/dist/jquery.min.js',
-		'node_modules/popper.js/dist/umd/popper.min.js', 'src/js/**'], gulp.series('js'));
+		'node_modules/popper.js/dist/umd/popper.min.js', 'src/js/**'],
+		gulp.series('js'));
 	gulp.watch("./*.html").on('change', browserSync.reload);
 }));
 
-gulp.task('default', gulp.series('js', 'serve'));
+gulp.task('default', gulp.series('serve'));
